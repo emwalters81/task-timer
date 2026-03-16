@@ -1,7 +1,7 @@
 <script>
-    export let optionName;
+    var {optionName} = $props();
 
-    let showDropdown = false;
+    let showDropdown = $state(false);
 
     function toggleDropdown() {
         showDropdown = !showDropdown;
@@ -11,7 +11,7 @@
 <div class="container">
     {optionName}
 
-    <button on:click={toggleDropdown}>&#8615;</button>
+    <button onclick={toggleDropdown}>&#8615;</button>
 
     {#if showDropdown && optionName === "Account Settings"}
         <div class = "dropdown">
