@@ -20,6 +20,7 @@
     {
         background-color: lightyellow;
         min-height: 100vh;
+        min-width: 100%
     }
 
 </style>
