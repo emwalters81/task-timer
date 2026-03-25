@@ -1,6 +1,6 @@
 <script lang="ts">
 
-// declare variables 
+
   let { timer } = $props()
   let paused = $state(true)
   // let timer = $state(27165000) // parameter placeholder
@@ -51,21 +51,35 @@
 
 </script>
 
-<div class="flex flex-col">
-	<h1>{ms_to_hr(timer)}:{ms_to_min(timer)}:{ms_to_sec(timer)}</h1>
+<div>
+  <div class="timer_outline">
+    <p>{ms_to_hr(timer)}:{ms_to_min(timer)}:{ms_to_sec(timer)}</p>
+  </div>
 	
-  <button onclick={toggle_pause}>
+  <button onclick={toggle_pause} class="pause_button">
     {#if paused}
       Resume
     {:else }
       Pause
     {/if}  
   </button>
-
-	<button>
-		Mark Done (WIP)
-	</button>
 </div>
 
+
+<style>
+  .timer_outline {
+  outline-style: solid;
+  font-size: var(--text-7xl);
+  border-radius: var(--radius-lg);
+  margin: calc(var(--spacing) * 3);
+  }
+
+  .pause_button {
+  border-radius: var(--radius-lg);
+  outline-style: solid;
+  margin: calc(var(--spacing) * 2);
+  }
+
+</style>
 
 <!-- styles go here -->
