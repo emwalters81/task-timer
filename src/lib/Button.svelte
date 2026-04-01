@@ -1,6 +1,5 @@
 <script>
     var {text, color="bg-white", onClick} = $props()
-
     var onclick = $state(false)
 </script>
 
