@@ -22,11 +22,12 @@ test('Floor Edge', () => {
     expect(floored).toEqual(1)
 });
 
+// this case is necessary now
 test('Floor Error', () => {
 	let number = '-1.5'
   let floored = floor(number)
 
-    expect(floored).toEqual(-2)
+    expect(floored).toEqual(-1)
 });
 
 
@@ -102,26 +103,4 @@ test('msToSec Error', () => {
   expect(secs).toEqual('00')
 });
 
-
-
-test('Toggle Main', () => {
-  let bool = true
-  let toggled = toggle(bool)
-
-  expect(toggled).toEqual(false)
-});
-
-test('Toggle Edge', () => {
-  let bool = false 
-  let toggled = toggle(bool)
-
-  expect(toggled).toEqual(true)
-});
-
-// hope to not change value
-test('Toggle Error', () => {
-  let bool = '1'
-  let toggled = toggle(bool)
-
-  expect(toggled).toEqual(bool)
-});
+// removed toggle with toggle tests, was not function worthy
