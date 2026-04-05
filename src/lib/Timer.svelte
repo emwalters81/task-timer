@@ -1,33 +1,30 @@
 <script lang="ts">
 
-// declare variables 
-  let { timer } = $props()
+  // import timer in ms, external functions
+  let { timer, timeUp, timeAdd } = $props()
   let paused = $state(true)
-  // let timer = $state(27165000) // parameter placeholder
-  // need to make sound / notification for done in future 
+  let done = $state(false)
 
-// accessors cause runes are weird
-  const is_paused = () => {return paused} 
-  const get_time = () => {return timer}
-
-	let now = Date.now() // where timer starts
-	let later = now + get_time()
-
-// mutators
   function toggle_pause() { paused = !paused }
-
+ 
  $effect(() => {
-    if (!paused && timer > 0) { // only countdown if unpaused
+    if (!paused && timer > -1) { // countdown past 0 to eval done
+    
       const interval = window.setInterval(() => {
         timer -= 125; // remove 1/4 a second
       }, 125); // for every 1/4 a second
+
+      if (timer <= 0) {done = true}
 
       return () => clearInterval(interval);
     }
   });
 
-  // OUTPUT
+// effects for ending and resetting countdown
+$effect(()=> { if(done) { timeUp() } });
+$effect(()=> { if(done && timer > 0) {done = !done} });
 
+  // OUTPUT
   // weird situational floor helper function
   function floor (number) { return number = number - number%1 }
 
@@ -51,21 +48,39 @@
 
 </script>
 
-<div class="flex flex-col">
-	<h1>{ms_to_hr(timer)}:{ms_to_min(timer)}:{ms_to_sec(timer)}</h1>
-	
-  <button onclick={toggle_pause}>
+<div>
+  <div class="timer_outline">
+    <p>{ms_to_hr(timer)}:{ms_to_min(timer)}:{ms_to_sec(timer)}</p>
+  </div>
+   <p>{timer}</p>	
+  <button onclick={toggle_pause} class="custom_button">
     {#if paused}
       Resume
     {:else }
       Pause
     {/if}  
   </button>
+  {#if paused}
+    <button onclick={timeAdd} class="custom_button">Add Time</button>
+  {/if}
 
-	<button>
-		Mark Done (WIP)
-	</button>
 </div>
 
+
+<style>
+  .timer_outline {
+  outline-style: solid;
+  font-size: var(--text-7xl);
+  border-radius: var(--radius-lg);
+  margin: calc(var(--spacing) * 3);
+  }
+
+  .custom_button{
+  border-radius: var(--radius-lg);
+  outline-style: solid;
+  margin: calc(var(--spacing) * 2);
+  }
+
+</style>
 
 <!-- styles go here -->
