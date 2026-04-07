@@ -21,7 +21,7 @@
   });
 
 // effects for ending and resetting countdown
-$effect(()=> { if(done) { timeUp() } });
+$effect(()=> { if(done) { timeUp(); paused = true} });
 $effect(()=> { if(done && timer > 0) {done = !done} });
 
   // OUTPUT
@@ -52,7 +52,7 @@ $effect(()=> { if(done && timer > 0) {done = !done} });
   <div class="timer_outline">
     <p>{ms_to_hr(timer)}:{ms_to_min(timer)}:{ms_to_sec(timer)}</p>
   </div>
-   <p>{timer}</p>	
+   <!-- <p>{timer}</p>	 -->
   <button onclick={toggle_pause} class="custom_button">
     {#if paused}
       Resume
@@ -69,18 +69,22 @@ $effect(()=> { if(done && timer > 0) {done = !done} });
 
 <style>
   .timer_outline {
-  outline-style: solid;
-  font-size: var(--text-7xl);
-  border-radius: var(--radius-lg);
   margin: calc(var(--spacing) * 3);
+  outline-style: solid;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white); 
+  font-size: var(--text-7xl);
+  box-shadow: 8px_8px_0px_0px_#000;
   }
 
   .custom_button{
+  box-shadow: 1px_1px_0px_0px_#000;
+  background-color: var(--color-white); 
   border-radius: var(--radius-lg);
   outline-style: solid;
-  margin: calc(var(--spacing) * 2);
+  margin: calc(var(--spacing) * 4);
+  padding: px-3;
   }
 
 </style>
 
-<!-- styles go here -->
