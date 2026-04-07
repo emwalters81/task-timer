@@ -74,17 +74,14 @@
 				<input id="weight" type="range" min="100" max="300" bind:value={weight} class="w-full h-1.5 dark:bg-white/10 bg-amber-400/70 rounded-lg appearance-none cursor-pointer accent-amber-500" />
 			</div>
 
-			<!-- NEED TO MAKE AN INPUT BOX THAT ALLOWS YOU TO TELL HOW MUCH CAFFEINE YOU NORMALLY TAKE AND CALCULATE BASED OFF OF THAT -->
-
 			<!-- Task dropdown: Allows the user to select from their tasks they have -->
 			<div class="space-y-3">
 				<!-- Just the title :) -->
 				<label for="task-select" class="text-[10px] font-bold dark:text-stone-300 text-stone-600 uppercase tracking-widest">Task Selector</label>
 
 				<!-- This has all of the tasks with their given label and mult -->
-				<!-- It has an ugly blue highlight. Any way to change that? -->
 				<div class="relative">
-					<select id="task-select" bind:value={selectedTask} class="w-full p-3 bg-white/5 border border-white/10 rounded-lg appearance-none focus:outline-none dark:text-white text-stone-600 text-sm font-medium transition-all">
+					<select id="task-select" bind:value={selectedTask} class="w-full p-3 bg-white/5 border border-white/10 rounded-lg appearance-none focus:outline-none dark:text-white text-stone-600 text-sm font-medium transition-all dark:shadow-[4px_4px_0px_0px_#4a3b28] shadow-[4px_4px_0px_0px_#c4a484]">
 						{#each tasks as task}
 							<option value={task.title} class="bg-[#4a3b28] text-white">{task.label} : {task.mult} mg/lb</option>
 						{/each}
@@ -100,14 +97,14 @@
 
 					<!-- Allows the user to select their preferred method of intake -->
 					<div class="flex gap-3">
-						<select id="intake-select" bind:value={selectedIntake} class="w-3/4 p-3 bg-white/5 border border-white/10 rounded-lg appearance-none focus:outline-none dark:text-white text-stone-600 text-sm font-medium transition-all">
+						<select id="intake-select" bind:value={selectedIntake} class="w-3/4 p-3 bg-white/5 border border-white/10 rounded-lg appearance-none focus:outline-none dark:text-white text-stone-600 text-sm font-medium transition-all dark:shadow-[4px_4px_0px_0px_#4a3b28] shadow-[4px_4px_0px_0px_#c4a484]">
 							{#each intake as item}
 								<option value={item.title} class="bg-[#4a3b28] text-white">{item.title} : {item.concentration} mg per</option>
 							{/each}
 						</select>
 
 						<!-- Allows the user to input how much they normally drink in a day -->
-						<input type="number" bind:value={avgIntake} class="ml-3 w-full h-12 rounded-lg focus:outline-none bg-white/5 border-white/10 text-white dark:placeholder-white placeholder-stone-600 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" placeholder="Average Intake per Day">
+						<input type="number" bind:value={avgIntake} class="ml-3 w-full h-12 rounded-lg focus:outline-none bg-white/5 border-white/10 text-white dark:placeholder-white placeholder-stone-600 dark:shadow-[4px_4px_0px_0px_#4a3b28] shadow-[4px_4px_0px_0px_#c4a484] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" placeholder="Average Intake per Day">
 					</div>
 				</div>
 			</div>
