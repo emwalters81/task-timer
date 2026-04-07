@@ -8,9 +8,9 @@
 
 	<div class="flex flex-row">
 		<NavItem href="/" text="Tasks"></NavItem>
-		<NavItem href="/settings" text="Settings"></NavItem>
-		<NavItem href="/caffeine-calculator" text="Coffee!"></NavItem>
 		<NavItem href="/grade-calculator" text="Grade Calculator"></NavItem>
+		<NavItem href="/caffeine-calculator" text="Coffee!"></NavItem>
+		<NavItem href="/settings" text="Settings"></NavItem>
 	</div>
 
 	<NavItem href="/sign-up" text="Sign Up" class="flex-1 justify-end"></NavItem>

@@ -1,4 +1,6 @@
 <script>
+    import SubList from '$lib/SubList.svelte';
+
     var {optionName} = $props();
 
     let showDropdown = $state(false);
@@ -6,32 +8,28 @@
     function toggleDropdown() {
         showDropdown = !showDropdown;
     }
+
+    let accountSettings = ["Profile", "Security", "Log Out"];
+    let accessibilitySettings = ["Dark Mode", "Military Time"];
 </script>
 
-<div class="container">
-    {optionName}
+<div class="flex flex-col items-center justify-start p-4 bg-white w-2xl">
+    <div class="flex flex-row justify-between w-full">
+        {optionName}
 
-    <button onclick={toggleDropdown}>&#8615;</button>
+        <button onclick={toggleDropdown}>&#8615;</button>
+    </div>
+    
 
     {#if showDropdown && optionName === "Account Settings"}
-        <div class = "dropdown">
-            <p>Profile</p>
-            <p>Security</p>
-            <p>Log Out</p>
-        </div>
+        <SubList options={accountSettings} />
 
     {:else if showDropdown && optionName === "Accessibility"}
-        <div class = "dropdown">
-            <p>Dark Mode</p>
-            <p>Military Time</p>
-            <p></p>
-        </div>
-
-
+        <SubList options={accessibilitySettings} />
     {/if}
 </div>
 
-<style>
+<!-- <style>
     .container {
         display: inline-block;
         font-size: 30px;
@@ -72,4 +70,4 @@
         background-color: lightblue;
     }
 
-</style>
+</style> -->

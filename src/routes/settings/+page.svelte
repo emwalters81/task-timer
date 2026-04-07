@@ -6,21 +6,14 @@
 
 
 <script>
-    import Option from './Option.svelte';
+    import Option from '$lib/Option.svelte';
 </script>
 
-<main>   
-    <Option optionName="Account Settings" />
-    <Option optionName="Accessibility" />
-</main>
-
-<style>
-
-    main
-    {
-        background-color: lightyellow;
-        min-height: 100vh;
-        min-width: 100%
-    }
-
-</style>
+<div class="flex flex-col items-center justify-center p-4 pt-20 bg-amber-50 w-full min-h-screen">
+<!-- Add options here -->
+    <div class="flex flex-col p-4 border-2 bg-white rounded-2xl">
+        <Option optionName="Account Settings" />
+        <Option optionName="Accessibility" />
+    </div>
+    
+</div>
