@@ -28,10 +28,10 @@
           {#if dueMonth !== 0 && dueDay !== 0 && dueDay !== 0 || desc !== ""}
           <div class="m-5 outline-solid rounded focusedTaskInfo">
             {#if dueMonth !== 0 && dueDay !== 0 && dueYear !== 0}
-              <h2 class="m-2 px-5 py-2 outline-double">{dueMonth}/{dueDay}/{dueYear}</h2>
+              <h2 class="m-2 px-5 py-2">{dueMonth}/{dueDay}/{dueYear}</h2>
             {/if}
             {#if desc !== ""}
-              <h2 class="m-2 px-5 py-2 outline-double">{desc}</h2>
+              <h2 class="m-2 px-5 py-2">{desc}</h2>
             {/if}
           </div>
           {/if}

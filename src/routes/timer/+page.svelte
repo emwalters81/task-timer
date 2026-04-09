@@ -26,6 +26,9 @@
 <!-- make crud buttons for both of them -->
 <!-- make draggable components in a vertical queue -->
 
+<!-- idea for "chain" part of task timer: -->
+<!-- chaining tasktimers to avoid distractions when taking "a quick break" -->
+
 
 <!-- the app is vertical in nature -->
 <main class="flex justify-center columns-1"> 
@@ -37,8 +40,8 @@
   <div>
     <FocusedTimer {timer} {timeAdd} {timeUp} name={"Checkpoint 3"} desc={"idk present again again again or smthn"} dueMonth={4} dueDay={9} dueYear={2026}/>
   </div>
-  <UnfocusedTimer timer={120000} name={"quick break, hydrate"}></UnfocusedTimer>  
-  <UnfocusedTimer timer={3600000} name={"read that one book you hate"} dueMonth={4} dueDay={8} dueYear={2026}></UnfocusedTimer>  
+  <UnfocusedTimer timer={120000} name={"Stretch"}></UnfocusedTimer>  
+  <UnfocusedTimer timer={3600000} name={""} dueMonth={4} dueDay={8} dueYear={2026}></UnfocusedTimer>  
   </div>
 </main>
 
