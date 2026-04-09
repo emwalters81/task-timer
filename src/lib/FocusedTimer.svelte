@@ -11,7 +11,7 @@
 <div>
   <div class="outline-hidden">
     <!-- focused timer -->
-    <div class="focusedTaskTimer shadow-[4px_4px_0px_0px_#000]">
+    <div class="focusedTaskTimer shadow-[4px_4px_0px_0px_#000] bg-blue-200">
       <!-- invisible, for focused elements -->
       <div class="m-3e grid grid-cols-2 outline-hidden"> 
         <!-- left : timer side -->
@@ -46,7 +46,7 @@
 .focusedTaskTimer {
   margin: calc(var(--spacing) * 5); 
   border-radius: var(--radius-3xl);
-  background-color: var(--color-cyan-500); 
+  
   border-width: 2px;
   flex: auto;
   }

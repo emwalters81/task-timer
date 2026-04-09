@@ -31,7 +31,7 @@
 
 
 <!-- the app is vertical in nature -->
-<main class="flex justify-center columns-1"> 
+<div class="flex justify-center columns-1 bg-green-50 w-screen h-screen"> 
   <!-- pw-3/7 -->
   {#if done}
     <h1 class="text-9xl content-center text-center">THE TIMER IS DONE</h1>
@@ -43,15 +43,6 @@
   <UnfocusedTimer timer={120000} name={"Stretch"}></UnfocusedTimer>  
   <UnfocusedTimer timer={3600000} name={""} dueMonth={4} dueDay={8} dueYear={2026}></UnfocusedTimer>  
   </div>
-</main>
-
-
-<style>
-  main {
-    background-color: var(--color-amber-400);
-    min-height: 100vh;
-    min-width: 100%
-  }
-</style>
+</div>
 
 

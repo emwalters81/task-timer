@@ -5,7 +5,7 @@
   let {timer, name, dueMonth = 0, dueDay = 0, dueYear = 0} = $props()
 </script>
 
-<div class="unfocusedTaskTimer shadow-[5px_5px_0px_0px_#000]">
+<div class="unfocusedTaskTimer shadow-[5px_5px_0px_0px_#000] bg-blue-100 text-black">
   <!-- columns -->
   <div class="grid grid-cols-3 text-xl">
     <!-- col 1 -->
@@ -25,13 +25,13 @@
 
 <style>
 .unfocusedTaskTimer {
-  color: var(--color-slate-200);
+
   border-radius: var(--radius-sm);
   margin: calc(var(--spacing) * 5);
   outline: solid;
   outline-color: var(--color-black);
   flex: col;
-  background-color: var(--color-blue-700);
+
   }
 
 .cols {
